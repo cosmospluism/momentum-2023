@@ -1,0 +1,36 @@
+#clock {
+    font-size: 130px;
+    margin-bottom: 0;
+}
+
+#greeting {
+    margin: 0;
+}
+
+.center-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.login-form input {
+    margin: 0;
+    border: none;
+    font-size: 30px;
+    background: none;
+    text-align: center;
+    border-bottom: 3px solid white;
+    padding-bottom: 12px;
+    width: 300px;
+}
+
+.login-form input::placeholder {
+    color: white;
+}
+
+.login-form input:focus {
+    outline: none;
+    color: white;
+}

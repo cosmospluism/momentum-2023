@@ -1,0 +1,31 @@
+#todo-form {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#todo-form span {
+    font-size: 25px;
+    margin-top: 60px;
+}
+
+#todo-form input {
+    background: none;
+    border: none;
+    border-bottom: 3px solid white;
+}
+
+#todo-form input:focus {
+    color: white;
+    text-align: center;
+    outline: none;
+}
+
+.todo-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
