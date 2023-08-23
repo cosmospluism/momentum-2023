@@ -1,18 +1,19 @@
 #clock {
-    font-size: 130px;
+    font-size: 160px;
     margin-bottom: 0;
 }
 
 #greeting {
     margin: 0;
+    font-size: 50px;
 }
 
 .center-box {
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
 }
 
 .login-form input {
