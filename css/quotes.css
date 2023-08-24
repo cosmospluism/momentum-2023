@@ -1,8 +1,11 @@
 .quote {
+    position: fixed;
+    bottom: 35px;    
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    text-align: center;
     opacity: 0.9;
 }
 
