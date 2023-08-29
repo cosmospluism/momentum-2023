@@ -17,3 +17,14 @@
 .quote__author {
     font-size: 13px;
 }
+
+@media screen and (max-width : 700px) {
+    .quote__text {
+        font-size: 16px;   
+        margin-left: 20px; 
+    }
+    .quote__author {
+        font-size: 12px;
+        margin-right: 30px;
+    }    
+}

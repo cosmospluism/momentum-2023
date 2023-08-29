@@ -1,25 +1,35 @@
 const todoForm = document.querySelector("#todo-form");
 const todoQ = todoForm.querySelector("span");
 const todoInput = todoForm.querySelector("input");
+const answer = todoForm.querySelector(".answer");
 
 const saveTodo = localStorage.getItem("todoText");
-
-todoForm.addEventListener("submit", onSubmit);
 
 function onSubmit(event){
     event.preventDefault();
     const todoText = todoInput.value;
     localStorage.setItem("todoText", todoText);
-    changeQ();
+    todoQ.innerText = "TODAY";
     todoInput.classList.add("hidden");
-    getText();
+    appearTodo(todoText);
 }
 
-// problem : text doesn't appear ** , after that i add some transition
-function getText() {
-    todoInput.innerText = gotText;
+function appearTodo(pizza) {
+    answer.innerText = pizza;
+    answer.classList.remove("hidden");
+    const removeBtn = document.createElement("button");
+    removeBtn.innerText = "x";
+    answer.appendChild(removeBtn);
 }
- 
-function changeQ() {
-    todoQ.innerText = "TODAY";
+    
+if(saveTodo === null) {
+    todoQ.innerText = "What is your plan for today?";
+    answer.classList.add("hidden");
+    todoInput.classList.remove("hidden");
+    todoForm.addEventListener("submit", onSubmit);
+} else {
+    todoInput.classList.add("hidden");
+    appearTodo(saveTodo);
 }
+
+todoForm.addEventListener("submit", onSubmit);
