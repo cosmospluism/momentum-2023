@@ -5,11 +5,12 @@
 
 #greeting {
     margin: 0;
-    font-size: 50px;
+    font-size: 40px;
+    margin-bottom: 80px;
 }
 
 .center-box {
-    height: 400px;
+    height: 330px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,14 +18,13 @@
 }
 
 .login-form input {
-    margin: 0;
     border: none;
-    font-size: 30px;
+    font-size: 40px;
     background: none;
     text-align: center;
     border-bottom: 3px solid white;
     padding-bottom: 12px;
-    width: 300px;
+    width: 350px;
 }
 
 .login-form input::placeholder {
