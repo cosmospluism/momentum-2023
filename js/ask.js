@@ -10,7 +10,7 @@ function onSubmit(event){
     const todoText = todoInput.value;
     localStorage.setItem("todoText", todoText);
     todoQ.innerText = "TODAY";
-    todoInput.value = "";
+    // todoInput.value = "";
     todoInput.classList.add("hidden");
     appearTodo(todoText);
 }
@@ -25,17 +25,12 @@ function appearTodo(pizza) {
 }
 
 function deleteTodo() {
-    // const removeOne = event.target.parentElement;
-    // removeOne.remove();
-    // todoQ.innerText = "What is your plan for today?";
-    // answer.classList.add("hidden");
-    // todoInput.classList.remove("hidden");
+    const removeOne = event.target.parentElement;
+    removeOne.remove();
+    localStorage.removeItem("todoText");
 }
     
 if(saveTodo === null) {
-    // todoQ.innerText = "What is your plan for today?";
-    // todoInput.classList.remove("hidden");
-    answer.classList.add("hidden");
     todoForm.addEventListener("submit", onSubmit);
 } else {
     todoInput.classList.add("hidden");

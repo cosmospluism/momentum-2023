@@ -57,7 +57,7 @@
     margin-top: 5px;
     cursor: pointer;
     width: 35px;
-    height: 35px;
+    height: 32px;
 }
 
 @media screen and (max-width : 700px) {
@@ -66,7 +66,8 @@
     font-size: 25px;
     }
     #todo-form input {
-    font-size: 25px;
+    font-size: 27px;
     width: 320px;
+    margin-top: 10px;
     }
 }

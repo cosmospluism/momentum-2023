@@ -10,7 +10,7 @@
 }
 
 .center-box {
-    height: 330px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
