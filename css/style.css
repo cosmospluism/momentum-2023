@@ -1,12 +1,6 @@
-/* @import url("css/text.css");
-@import url("css/todo.css");
-@import url("css/quotes.css");
-@import url("css/weather.css"); */
-
 body {
     color: white;
     margin: auto;
-    /* font-family:Arial, Helvetica, sans-serif; */
 }
 
 #bg-image {

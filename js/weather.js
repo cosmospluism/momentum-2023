@@ -9,9 +9,11 @@ function onGeoOk(position){
     fetch(url)
     .then((response) => response.json())
     .then((data) => {
-        const weather = document.querySelector("#weather span:first-child");
-        weather.innerText = `${data.weather[0].main}, ${data.main.temp}°C`;
-        const city = document.querySelector("#weather span:last-child");
+        const weather = document.querySelector(".weather__one span:first-child");
+        weather.innerText = `${data.weather[0].main}`;
+        const temperature = document.querySelector(".weather__one span:last-child");
+        temperature.innerText = parseInt(`${data.main.temp}`) + "°";
+        const city = document.querySelector(".weather__two");
         city.innerText = data.name;
     });
 };

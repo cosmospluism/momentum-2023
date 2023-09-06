@@ -6,7 +6,6 @@
 #greeting {
     margin: 0;
     font-size: 40px;
-    margin-bottom: 80px;
 }
 
 .center-box {
@@ -15,7 +14,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: appearAnimation linear 0.7s;
 }
+
+@keyframes appearAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+};
 
 .login-form input {
     border: none;
