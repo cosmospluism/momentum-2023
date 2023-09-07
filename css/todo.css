@@ -1,14 +1,19 @@
+.hidden {
+    display: none;
+}
+
 #todo-form {
+    position: fixed;
+    width: 100%;
+    bottom: 110px;
     border: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* transition: none; */
     animation: appearAnimation linear 0.7s;
 }
 
-#todo-form span {
-    margin-top: 50px;
+#todo-form span, #answer-box span:first-child {
     font-size: 35px;
     font-weight: 600;
     opacity: 80%;
@@ -36,11 +41,13 @@
     align-items: center;
 } */
 
-.hidden {
-    display: none;
+#answer-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#todo-form .answer {
+#answer-box span:last-child {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,7 +57,7 @@
     color: thistle;
 }   
 
-#todo-form .answer button {
+#answer-box span:last-child button {
     background-color: rgba(0, 0, 0, 0.4);
     border: none;
     font-size: 25px;
@@ -63,14 +70,18 @@
 }
 
 @media screen and (max-width : 700px) {
-    #todo-form span {
+    #todo-form {
+    bottom: 140px;
+    }
+    #todo-form span, #answer-box span:first-child {
     margin-top: 0px;
     font-size: 25px;
     }
-    #todo-form input {
+    #todo-form input, #answer-box span:last-child {
     font-size: 27px;
     width: 320px;
     margin-top: 10px;
+    font-weight: 600;
     }
 }
 

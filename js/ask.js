@@ -1,23 +1,26 @@
-const todoForm = document.querySelector("#todo-form");
-const todoQ = todoForm.querySelector("span");
+const todoForm = document.getElementById("todo-form");
+const todoAsk = todoForm.querySelector(".todo-ask");
 const todoInput = todoForm.querySelector("input");
-const answer = todoForm.querySelector(".answer");
+const answerBox = document.getElementById("answer-box");
+const answerText = answerBox.querySelector("span:first-child");
+const answer = answerBox.querySelector("span:last-child");
 
 let saveTodo = localStorage.getItem("todoText");
+
+// todoForm.addEventListener("submit", onSubmit);
 
 function onSubmit(event){
     event.preventDefault();
     const todoText = todoInput.value;
     localStorage.setItem("todoText", todoText);
-    todoQ.innerText = "TODAY";
-    // todoInput.value = "";
+    todoAsk.classList.add("hidden");
     todoInput.classList.add("hidden");
-    appearTodo(todoText);
+    answerText.classList.remove("hidden");
+    paintTodo(todoText);
 }
 
-function appearTodo(pizza) {
+function paintTodo(pizza) {
     answer.innerText = pizza;
-    answer.classList.remove("hidden");
     const removeBtn = document.createElement("button");
     removeBtn.innerText = "x";
     answer.appendChild(removeBtn);
@@ -25,15 +28,15 @@ function appearTodo(pizza) {
 }
 
 function deleteTodo() {
-    const removeOne = event.target.parentElement;
-    removeOne.remove();
+    const deleteOne = event.target.parentElement;
+    deleteOne.remove();
     localStorage.removeItem("todoText");
 }
     
 if(saveTodo === null) {
+    todoAsk.classList.remove("hidden");
+    todoInput.classList.remove("hidden");
     todoForm.addEventListener("submit", onSubmit);
 } else {
-    todoInput.classList.add("hidden");
-    todoQ.innerText = "TODAY";
-    appearTodo(saveTodo);
+    paintTodo(saveTodo);
 }
