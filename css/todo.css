@@ -77,11 +77,14 @@
     margin-top: 0px;
     font-size: 25px;
     }
-    #todo-form input, #answer-box span:last-child {
+    #todo-form input {
     font-size: 27px;
     width: 320px;
     margin-top: 10px;
     font-weight: 600;
+    }
+    #answer-box span:last-child {
+        font-size: 37px;
     }
 }
 

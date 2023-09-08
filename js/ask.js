@@ -7,15 +7,13 @@ const answer = answerBox.querySelector("span:last-child");
 
 let saveTodo = localStorage.getItem("todoText");
 
-// todoForm.addEventListener("submit", onSubmit);
-
 function onSubmit(event){
     event.preventDefault();
     const todoText = todoInput.value;
+    todoInput.value = "";
     localStorage.setItem("todoText", todoText);
     todoAsk.classList.add("hidden");
     todoInput.classList.add("hidden");
-    answerText.classList.remove("hidden");
     paintTodo(todoText);
 }
 
@@ -24,6 +22,8 @@ function paintTodo(pizza) {
     const removeBtn = document.createElement("button");
     removeBtn.innerText = "x";
     answer.appendChild(removeBtn);
+    answerText.classList.remove("hidden");
+    answer.classList.remove("hidden");
     removeBtn.addEventListener("click", deleteTodo);
 }
 
@@ -31,12 +31,13 @@ function deleteTodo() {
     const deleteOne = event.target.parentElement;
     deleteOne.remove();
     localStorage.removeItem("todoText");
+    answerText.classList.add("hidden");
 }
     
 if(saveTodo === null) {
-    todoAsk.classList.remove("hidden");
-    todoInput.classList.remove("hidden");
     todoForm.addEventListener("submit", onSubmit);
 } else {
+    todoAsk.classList.add("hidden");
+    todoInput.classList.add("hidden");
     paintTodo(saveTodo);
 }
